@@ -1,9 +1,31 @@
 body {
-    font-family: 'Work Sans', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 300;
+    padding:10px;
 }
 
 span {
     font-weight: 200;
     color: #D30069;
+    font-style: italic;
+}
+
+img {
+
+    width:100px;
+    height:100px;
+
+}
+
+.paragraph-header {
+    
+    font-weight: 500;
+    text-decoration: underline;
+    color: #FE5021;
+
+}
+
+a {
+    color: #FE5021;
+    font-weight:500;
 }

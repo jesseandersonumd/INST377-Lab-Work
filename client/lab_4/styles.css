@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .menu-container {
+    color: #fff;
+    background-color: #5995DA;  /* Blue */
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .signup {
+    margin-left: auto;
+  }
+
+  .menu {
+    border: 1px solid #fff;
+    width: 900px;
+    display: flex;
+    justify-content: space-between;
+
+  }
+
+  .links {
+    border: 1px solid #fff;  /* For debugging */
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .login {
+    margin-left: 20px;
+  }
+
+  .header-container {
+    color: #5995DA;
+    background-color: #D6E9FE;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .header {
+    width: 900px;
+    height: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .carousel {
+    overflow: hidden;
+    max-width: 600px;
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    padding:20px;
+}
+
+.carousel .carousel_item,
+.carousel .hidden {
+    display: none;
+}
+
+.carousel .carousel_item img {
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+}
+
+.carousel .visible {
+    display:block;
+}
+.carousel_actions {
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.carousel .carousel_actions button {
+    border-radius:50px;
+    padding:10px;
+    border:none;
+}
+
+  .social,
+  .subscribe {
+    align-self: flex-end;
+    margin-bottom: 20px;
+  }
+
+  .footer {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .first-item {
+    order: 1;
+  }
+  
+  .last-item {
+    order: -2;
+  }
+
+  .footer-item {
+    border: 1px solid #fff;
+    background-color: #D6E9FE;
+    height: 200px;
+    flex: 1;
+  }
+
+  .footer-one,
+.footer-three {
+  background-color: #5995DA;
+  flex: initial;
+  width: 300px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+#top_bar {
+    background-color:darkcyan;
+    width:100%;
+}
+
+#top_bar p {
+    padding:10px;
+}
+
+#github {
+    color: #5995DA;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <p class="header-type">Jesse Anderson's Lab 5</p>
+
+    <div class="wrapper">
+        <div class="container">
+            
+                <div class="columns is-vcentered">
+                    <div class="column">
+                        <form action="/api" method="get" class="my-form">
+                            <div class="field">
+                                <label for="first-name" class="label">First Name</label>
+                                <div class="control">
+                                <input id="first-name" class="input" type="text" placeholder="Jesse">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label for="last-name" class="label">Last Name</label>
+                                <div class="control">
+                                <input id="last-name" class="input" type="text" placeholder="Anderson">
+                                </div>
+                            </div>
+                            <div class="control">
+                                <legend>Veggie or Vegan?</legend>
+                                <label class="radio">
+                                <input type="radio" name="answer">
+                                Yes
+                                </label>
+                                <label class="radio">
+                                <input type="radio" name="answer">
+                                No
+                                </label>
+                            </div>
+                            <div>
+                                <button>Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="column is-8">
+                        <p class="header-type">More fun stuff here soon!</p>
+                    </div>
+                </div>
+        </div>
+    </div>
+    
+</body>
+</html>

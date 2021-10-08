@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>Jesse Anderson's Restaurant Explorer!</h1>
+    <p>Type in a zipcode or restaurant name of your choice and check out all of the options! :) </p>
+    <form class="search-form">
+        <input type="text" class="search" placeholder="City or State">
+        <ul class="suggestions">
+            <li>Filter for a name</li>
+            <li>or a zipcode</li>
+        </ul>
+    </form>
+    <script>
+        
+        const endpoint = "https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json";
+        const restauraunts = [];
+    
+        fetch(endpoint)
+        .then(blob => blob.json())
+        .then(data => restauraunts.push(...data)); // fetch itself returns a promise 
+        
+        // blob has to be converted from raw data it's in into json
+        function findMatches(wordToMatch, restauraunts) {
+            return restauraunts.filter(place => {
+                // figure out if city or state matches what was searched
+                const regex = new RegExp(wordToMatch, 'gi')
+                return place.name.match(regex) || place.zip.match(regex)
+            });
+        }
+    
+        function displayMatches() {
+            const matchArray = findMatches(this.value, restauraunts);
+            const html = matchArray.map(place => {
+                return `
+                    <li>
+                        <span class="name">${place.name}, ${place.state}</span>
+                        <span class="population">${place.zip}</span>
+                    </li>
+                `
+            }).join('');
+            suggestions.innerHTML = html
+        }
+        
+        const searchInput = document.querySelector(".search")
+        const suggestions = document.querySelector(".suggestions")
+    
+        searchInput.addEventListener("change", displayMatches);
+        searchInput.addEventListener("keyup", displayMatches);
+    
+
+
+    </script>
+
+<script>
+    async function windowActions() {
+        const endpoint = "https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json";
+    
+        const request = await fetch(endpoint)
+        const restaurants = await request.json()
+
+        .then(blob => blob)
+        .then(data => restauraunts.push(...data)); // fetch itself returns a promise 
+        
+        // blob has to be converted from raw data it's in into json
+        function findMatches(wordToMatch, restauraunts) {
+            return restauraunts.filter(place => {
+                // figure out if city or state matches what was searched
+                const regex = new RegExp(wordToMatch, 'gi')
+                return place.name.match(regex) || place.zip.match(regex)
+            });
+        }
+    
+        function displayMatches(event) {
+            const matchArray = findMatches(event.target.value, restauraunts);
+            const html = matchArray.map(place => {
+                return `
+                    <li>
+                        <span class="name">${place.name}, ${place.state}</span>
+                        <span class="population">${place.zip}</span>
+                    </li>
+                `
+            }).join('');
+            suggestions.innerHTML = html
+        }
+        
+        const searchInput = document.querySelector(".search")
+        const suggestions = document.querySelector(".suggestions")
+    
+        searchInput.addEventListener("change", displayMatches);
+        searchInput.addEventListener("keyup", (evt) => { displayMatches(evt) });
+    }
+    window.onload = windowActions;
+    
+
+</script>
+</body>
+</html>
